@@ -1,4 +1,4 @@
-// 🔐 GENERATE PASSWORD
+//  GENERATE PASSWORD
 function generatePassword() {
     const length = document.getElementById("length").value;
     const uppercase = document.getElementById("uppercase").checked;
@@ -39,7 +39,7 @@ function generatePassword() {
 }
 
 
-// 📋 COPY PASSWORD
+//  COPY PASSWORD
 function copyPassword() {
     const text = document.getElementById("result").innerText;
 
@@ -51,7 +51,7 @@ function copyPassword() {
 }
 
 
-// 👁️ SHOW / HIDE PASSWORD
+//  SHOW / HIDE PASSWORD
 let isHidden = false;
 
 function togglePassword() {
@@ -70,7 +70,7 @@ function togglePassword() {
 }
 
 
-// 🔥 TOAST
+//  TOAST
 function showToast(message) {
     const toast = document.getElementById("toast");
     toast.innerText = message;
@@ -80,7 +80,7 @@ function showToast(message) {
 }
 
 
-// 🌙 THEME TOGGLE
+// THEME TOGGLE
 window.onload = function () {
     const savedTheme = localStorage.getItem("theme");
 
