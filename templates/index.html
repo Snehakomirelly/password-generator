@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container">
+
+    <h1>🔐 Password Generator</h1>
+    <p class="subtitle">Create strong and secure passwords instantly</p>
+
+    <!-- 🌙 Theme Toggle -->
+    <button id="themeToggle" class="theme-btn">🌙 Dark Mode</button>
+
+    <div class="card">
+
+        <label>Password Length</label>
+        <input type="number" id="length" value="12" min="4" max="32">
+
+        <div class="options">
+            <label><input type="checkbox" id="uppercase" checked> Uppercase (A-Z)</label>
+            <label><input type="checkbox" id="lowercase" checked> Lowercase (a-z)</label>
+            <label><input type="checkbox" id="numbers" checked> Numbers (0-9)</label>
+            <label><input type="checkbox" id="symbols" checked> Symbols (!@#$)</label>
+        </div>
+
+        <button onclick="generatePassword()">Generate Password</button>
+
+        <!-- 🔥 Strength Meter -->
+        <div class="strength-container">
+            <p>Strength: <span id="strengthText">-</span></p>
+            <div class="bar">
+                <div id="strengthBar"></div>
+            </div>
+        </div>
+
+        <!-- 🔥 RESULT BOX (WITH EYE TOGGLE) -->
+        <div class="result-box">
+
+            <p id="result">Your password will appear here</p>
+
+            <!-- 👁️ SHOW/HIDE -->
+            <button class="eye-btn" onclick="togglePassword()">👁️</button>
+
+            <!-- 📋 COPY -->
+            <button class="copy-btn" onclick="copyPassword()">Copy</button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Toast -->
+<div id="toast" class="toast">Copied ✔️</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
