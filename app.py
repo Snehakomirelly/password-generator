@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 import random
 import string
 app = Flask(__name__)
-# 🔐 Generate Password
+#  Generate Password
 def generate_password(length, use_upper, use_lower, use_digits, use_symbols):
     upper = string.ascii_uppercase if use_upper else ""
     lower = string.ascii_lowercase if use_lower else ""
@@ -12,7 +12,7 @@ def generate_password(length, use_upper, use_lower, use_digits, use_symbols):
     if not all_chars:
         return "Select at least one option!"
     password = []
-    # 🔥 guarantee at least one from each selected type
+    # guarantee at least one from each selected type
     if use_upper:
         password.append(random.choice(upper))
     if use_lower:
@@ -21,13 +21,13 @@ def generate_password(length, use_upper, use_lower, use_digits, use_symbols):
         password.append(random.choice(digits))
     if use_symbols:
         password.append(random.choice(symbols))
-    # 🔥 fill remaining characters
+    #  fill remaining characters
     while len(password) < length:
         password.append(random.choice(all_chars))
-    # 🔥 shuffle final result
+    #  shuffle final result
     random.shuffle(password)
     return "".join(password)
-# 📊 Strength Checker
+#  Strength Checker
 def check_strength(password, use_upper, use_lower, use_digits, use_symbols):
     score = 0
 
